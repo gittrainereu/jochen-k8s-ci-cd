@@ -28,7 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install kubectl 
         run: sudo snap install kubectl --classic
-
       # Runs a set of commands using the runners shell
       - name: Find out where we are and the directory listing
         run: |
@@ -36,3 +35,10 @@ jobs:
           ls -la 
           echo $GITHUB_WORKSPACE
           echo ~
+      - name: Setup kubeconfig 
+        run: |
+          mkdir ~/.kube
+          echo $KUBECONFIG_CONTENT > ~/.kube/config
+          ls -la ~/.kube/config
+        env:
+          KUBECONFIG_CONTENT: ${{secrets.KUBECONFIG_SECRET}}
