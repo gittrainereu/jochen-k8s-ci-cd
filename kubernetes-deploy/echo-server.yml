@@ -21,4 +21,4 @@ spec:
           imagePullPolicy: IfNotPresent
           args:
             - -listen=:8080
-            - -text="hello world"
+            - -text="hello NEW world"
