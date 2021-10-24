@@ -45,3 +45,11 @@ jobs:
           KUBECONFIG_CONTENT: ${{secrets.KUBECONFIG_SECRET}}
       - name: Test kubectl 
         run: kubectl get pods
+        
+      - name: deploy new version 
+        run: | 
+          kubectl get deployments
+          kubectl get pods
+          kubectl apply -f $GITHUB_WORKSPACE/kubernetes-deploy/echo-server.yml
+          kubectl get deployments 
+          kubectl get pods 
