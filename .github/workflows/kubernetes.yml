@@ -42,3 +42,5 @@ jobs:
           ls -la ~/.kube/config
         env:
           KUBECONFIG_CONTENT: ${{secrets.KUBECONFIG_SECRET}}
+      - name: Test kubectl 
+        run: kubectl get pods
