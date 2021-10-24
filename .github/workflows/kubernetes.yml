@@ -48,8 +48,16 @@ jobs:
         
       - name: deploy new version 
         run: | 
+          echo "---"
           kubectl get deployments
           kubectl get pods
+          echo "---"
+          
+          echo 
           kubectl apply -f $GITHUB_WORKSPACE/kubernetes-deploy/echo-server.yml
+          echo 
+          echo 
+          kubectl describe deployments/echo-server-deployment
+          
           kubectl get deployments 
           kubectl get pods 
