@@ -35,3 +35,4 @@ jobs:
           pwd
           ls -la 
           echo $GITHUB_WORKSPACE
+          echo ~
