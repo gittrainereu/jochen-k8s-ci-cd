@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install kubectl 
-        run: sudo snap install kubectl 
+        run: sudo snap install kubectl --classic
 
       # Runs a set of commands using the runners shell
       - name: Find out where we are and the directory listing
