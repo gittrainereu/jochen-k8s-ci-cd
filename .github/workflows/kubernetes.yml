@@ -38,8 +38,9 @@ jobs:
       - name: Setup kubeconfig 
         run: |
           mkdir ~/.kube
-          echo $KUBECONFIG_CONTENT > ~/.kube/config
+          echo "$KUBECONFIG_CONTENT" > ~/.kube/config
           ls -la ~/.kube/config
+          
         env:
           KUBECONFIG_CONTENT: ${{secrets.KUBECONFIG_SECRET}}
       - name: Test kubectl 
